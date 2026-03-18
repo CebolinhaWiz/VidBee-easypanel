@@ -25,4 +25,4 @@ COPY packages/ui packages/ui
 
 EXPOSE 3000
 
-CMD ["pnpm", "--filter", "./apps/web", "exec", "vite", "dev", "--host", "0.0.0.0", "--port", "3000"]
+CMD ["pnpm", "--filter", "./apps/web", "exec", "vite", "preview", "--host", "0.0.0.0", "--port", "3000"]
