@@ -46,8 +46,8 @@ const config = defineConfig({
 	// 🔥 ADICIONA ISSO AQUI
 	preview: {
 		host: true,
-		port: 3000,
-		allowedHosts: "all",
+		port: 3001,
+		allowedHosts: true,
 	},
 
 	ssr: {
