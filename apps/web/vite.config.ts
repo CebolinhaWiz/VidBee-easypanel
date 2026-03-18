@@ -29,19 +29,27 @@ const config = defineConfig({
 	server: {
 		proxy: {
 			"/events": {
-				target: "http://localhost:3100",
+				target: "http://api:3100", // 🔥 troquei localhost
 				changeOrigin: true,
 			},
 			"/rpc": {
-				target: "http://localhost:3100",
+				target: "http://api:3100",
 				changeOrigin: true,
 			},
 			"/images": {
-				target: "http://localhost:3100",
+				target: "http://api:3100",
 				changeOrigin: true,
 			},
 		},
 	},
+
+	// 🔥 ADICIONA ISSO AQUI
+	preview: {
+		host: true,
+		port: 3000,
+		allowedHosts: "all",
+	},
+
 	ssr: {
 		noExternal: ["@vidbee/i18n"],
 	},
