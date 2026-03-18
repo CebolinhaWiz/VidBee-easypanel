@@ -26,10 +26,11 @@ services:
       context: .
       dockerfile: apps/web/Dockerfile
       args:
-        VITE_API_URL: ${VITE_API_URL:-http://localhost:${VIDBEE_API_PORT:-3100}}
+        VITE_API_URL: http://api:${VIDBEE_API_PORT:-3100}  # 🔥 corrige localhost
     depends_on:
       api:
         condition: service_healthy
+    command: pnpm run start:web   # ✅ AQUI
     ports:
       - "${VIDBEE_WEB_PORT:-3000}:3000"
     restart: unless-stopped
